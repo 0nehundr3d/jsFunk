@@ -424,7 +424,7 @@ describe("PROTOTYPES", () => {
   });
 
   describe("Board Game Prompts", () => {
-    it.skip("listGames", () => {
+    it("listGames", () => {
       const strategyGames = listGames('strategy');
       const childrensGames = listGames('childrens');
       const partyGames = listGames('party');
@@ -435,7 +435,7 @@ describe("PROTOTYPES", () => {
     });
 
     
-    it.skip("findHighestRatedGamesByType", () => {
+    it("findHighestRatedGamesByType", () => {
       const highestStrategy = findHighestRatedGamesByType('strategy');
       const highestChildrens = findHighestRatedGamesByType('childrens');
       const highestParty = findHighestRatedGamesByType('party');
@@ -445,7 +445,7 @@ describe("PROTOTYPES", () => {
       expect(highestParty).to.deep.equal({ name: 'Codenames', rating: 7.4, maxPlayers: 8 });
     });
 
-    it.skip("averageScoreByType", () => {
+    it("averageScoreByType", () => {
       const avScoreStrat = averageScoreByType('strategy');
       const avScoreChildren = averageScoreByType('childrens');
       const avScoreParty = averageScoreByType('party');
@@ -455,7 +455,7 @@ describe("PROTOTYPES", () => {
       expect(Math.round(avScoreParty * 100) / 100).to.equal(6.54);
     });
 
-    it.skip("averageScoreByTypeAndPlayers", () => {
+    it("averageScoreByTypeAndPlayers", () => {
       const avScoreStrat = averageScoreByTypeAndPlayers('strategy', 2);
       const avScoreChildren = averageScoreByTypeAndPlayers('childrens', 4);
       const avScoreParty = averageScoreByTypeAndPlayers('party', 8);
