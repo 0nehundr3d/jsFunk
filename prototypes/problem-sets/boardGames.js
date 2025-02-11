@@ -95,7 +95,17 @@ Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
+function averageScoreByType(type) {
+ let gamesOfType = boardGames[type] //Search boardGames object for given type
+ let totalGames = gamesOfType.length //Save the total number of games in the given category
+ let totalScore = gamesOfType.reduce((acc, game) => {
+  return acc + game.rating //Add up score of all games in given category
+ }, 0)
 
+ return totalScore/totalGames //Return the score off all games divided by the total number of games to get the average
+}
+
+console.log(averageScoreByType("childrens"))
 
 /*
 Level 4
@@ -119,6 +129,22 @@ Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
   
+function averageScoreByTypeAndPlayers(type, players) {
+  let gamesOfType = boardGames[type]
+  let gamesOfTypeAndPlayers = gamesOfType.filter((game) => {
+    return game.maxPlayers === players
+  })
+
+  let totalGames = gamesOfTypeAndPlayers.length
+  let totalScore = gamesOfTypeAndPlayers.reduce((acc, game) => {
+    return acc + game.rating //Add up score of all games in given category
+   }, 0)
+   return totalScore/totalGames
+}
+
+console.log(averageScoreByTypeAndPlayers("strategy", 2))
+console.log(averageScoreByTypeAndPlayers("childrens", 4))
+
 /*
 Level 5
 
@@ -135,9 +161,9 @@ Annotation:
 
 
 
-// module.exports = {
-//   listGames,
-//   findHighestRatedGamesByType,
-//   averageScoreByType,
-//   averageScoreByTypeAndPlayers
-// };
+module.exports = {
+  listGames,
+  findHighestRatedGamesByType,
+  averageScoreByType,
+  averageScoreByTypeAndPlayers
+};
