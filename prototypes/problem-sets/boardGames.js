@@ -29,9 +29,9 @@ Annotate:
 */
 
 function listGames(type) {
-  let gamesOfType = boardGames[type]
+  let gamesOfType = boardGames[type] //Search boardGames object for every game in a category
   return gamesOfType.map((game) => {
-    return game.name
+    return game.name //Change the array of game objects into an array of strings with a map
   })
 }
 
@@ -58,9 +58,20 @@ Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
-// function findHighestRatedGamesByType(type) {
-//   let gamesOfType
-// }
+function findHighestRatedGamesByType(type) {
+  let gamesOfType = boardGames[type] //Search boardGames object for all games of given type
+  return gamesOfType.reduce((acc, game) => {
+    if (!acc) {
+      acc = game //Set acc to first game object
+    } else if (acc.rating < game.rating) {
+      acc = game //Set acc to new game if games rating is higher
+    }
+
+    return acc //Ignore game param if rating is lower than acc
+  }, undefined)
+}
+
+console.log(findHighestRatedGamesByType("party"))
 
 /*
 Level 3
