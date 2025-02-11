@@ -130,16 +130,16 @@ Annotation:
 */
   
 function averageScoreByTypeAndPlayers(type, players) {
-  let gamesOfType = boardGames[type]
+  let gamesOfType = boardGames[type] //Search for games of type in boardGames object
   let gamesOfTypeAndPlayers = gamesOfType.filter((game) => {
-    return game.maxPlayers === players
+    return game.maxPlayers === players //Filter games to only those with the given max player count
   })
 
-  let totalGames = gamesOfTypeAndPlayers.length
+  let totalGames = gamesOfTypeAndPlayers.length //Store total number of games
   let totalScore = gamesOfTypeAndPlayers.reduce((acc, game) => {
-    return acc + game.rating //Add up score of all games in given category
+    return acc + game.rating //Add up score of all games
    }, 0)
-   return totalScore/totalGames
+   return totalScore/totalGames //Return average score of games of type and player count
 }
 
 console.log(averageScoreByTypeAndPlayers("strategy", 2))
