@@ -23,7 +23,17 @@ Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
+function findOrangeNames(kitties) {
+  let orangeKitties = kitties.filter((kitty) => {
+    return kitty.color === 'orange' //Find all orange kitties
+  })
 
+  return orangeKitties.map((kitty) => {
+    return kitty.name //Map kitty objects into an array of names
+  })
+}
+
+// console.log(findOrangeNames(kitties))
 /*
 Level 2
 
@@ -56,6 +66,13 @@ Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
+function sortByAge(kitties) {
+  return kitties.sort((a, b) => {
+    return b.age - a.age //Sort kitties by age
+  })
+}
+
+// console.log(sortByAge(kitties))
 
 /*
 Level 3
@@ -84,6 +101,18 @@ Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
   
+function growUp(kitties) {
+  return kitties.reduce((acc, kitty) => {
+    acc.push({
+      name: kitty.name,
+      age: kitty.age + 2,
+      color: kitty.color
+    })
+    return acc
+  }, [])
+}
+
+// console.log(growUp(kitties))
 
 /*
 Level 4
@@ -155,8 +184,8 @@ Annotation:
 
 
 
-// module.exports = {
-//   findOrangeNames,
-//   sortByAge,
-//   growUp
-// };
+module.exports = {
+  findOrangeNames,
+  sortByAge,
+  growUp
+};
