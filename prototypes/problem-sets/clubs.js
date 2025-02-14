@@ -28,7 +28,19 @@ Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
+function findClubMembers(clubs) {
+  return clubs.reduce((acc, club) => {
+    club.members.forEach((member) => { //Iterate through all members of a club
+      if (!acc[member]) {
+        acc[member] = [] //Create member array if it does nto exist
+      }
+      acc[member].push(club.club) //Push club name into member array
+    })
+    return acc
+  }, {})
+}
 
+console.log(findClubMembers(clubs))
 
 /*
 Level 2
@@ -46,6 +58,6 @@ Annotation:
 
 
 
-// module.exports = {
-//   findClubMembers
-// };
+module.exports = {
+  findClubMembers
+};

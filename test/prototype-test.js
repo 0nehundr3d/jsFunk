@@ -232,7 +232,7 @@ describe("PROTOTYPES", () => {
   });
 
   describe("Club Prompts", () => {
-    it.skip("membersBelongingToClubs", () => {
+    it("membersBelongingToClubs", () => {
       const e = findClubMembers(clubs);
 
       expect(e).to.deep.equal({
