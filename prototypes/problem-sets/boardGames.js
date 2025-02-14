@@ -71,7 +71,7 @@ function findHighestRatedGamesByType(type) {
   }, undefined)
 }
 
-console.log(findHighestRatedGamesByType("party"))
+// console.log(findHighestRatedGamesByType("party"))
 
 /*
 Level 3
@@ -142,8 +142,8 @@ function averageScoreByTypeAndPlayers(type, players) {
    return totalScore/totalGames //Return average score of games of type and player count
 }
 
-console.log(averageScoreByTypeAndPlayers("strategy", 2))
-console.log(averageScoreByTypeAndPlayers("childrens", 4))
+// console.log(averageScoreByTypeAndPlayers("strategy", 2))
+// console.log(averageScoreByTypeAndPlayers("childrens", 4))
 
 /*
 Level 5
