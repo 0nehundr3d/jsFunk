@@ -251,13 +251,13 @@ describe("PROTOTYPES", () => {
   });
 
   describe("Student Prompts", () => {
-    it.skip("findEnrolledStudents", () => {
+    it("findEnrolledStudents", () => {
       const e = findEnrolledStudents();
 
       expect(e).to.deep.equal(["John", "Bob", "Eve"]);
     });
 
-    it.skip("getAverageGrade", () => {
+    it("getAverageGrade", () => {
       const johnAve = getAverageGrade("John");
       const bobAve = getAverageGrade("Bob");
       const aliceAve = getAverageGrade("Alice");
@@ -267,7 +267,7 @@ describe("PROTOTYPES", () => {
       expect(Math.round(aliceAve * 100) / 100).to.equal(85);
     })
 
-    it.skip("findBestAverageGrade", () => {
+    it("findBestAverageGrade", () => {
       const e = findBestAverageGrade();
 
       expect(e).to.equal("Eve");

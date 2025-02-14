@@ -23,6 +23,16 @@ Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
+function findEnrolledStudents() {
+  let enrolledStudenNames = students.filter((student) => {
+    return student.enrolled
+  })
+  return enrolledStudenNames.map((student) => {
+    return student.name
+  })
+}
+
+// console.log(findEnrolledStudents())
 
 /*
 Level 2
@@ -44,6 +54,17 @@ Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
+function getAverageGrade(studentName) {
+  let target = students.filter((student) => {
+    return student.name === studentName
+  })[0]
+
+  return target.grades.reduce((acc, score) => {
+    return acc + score
+  }, 0) / target.grades.length
+}
+
+// console.log(getAverageGrade("Bob"))
 
 /*
 Level 3
@@ -61,6 +82,25 @@ Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
 
+function findBestAverageGrade() {
+  let cleanedStudents = students.map((student) => {
+    return {
+      "name": student.name,
+      "averageGrade": student.grades.reduce((acc, score) => {
+        return acc + score
+      }, 0) / student.grades.length
+    }
+  })
+
+  return cleanedStudents.reduce((acc, student) => {
+    if (!acc || student.averageGrade > acc.averageGrade) {
+      acc = student
+    }
+    return acc
+  }, undefined).name
+}
+
+// console.log(findBestAverageGrade())
 
 /*
 Level 4
@@ -77,8 +117,8 @@ Annotation:
 */
 
 
-// module.exports = {
-//   findEnrolledStudents,
-//   getAverageGrade,
-//   findBestAverageGrade
-// };
+module.exports = {
+  findEnrolledStudents,
+  getAverageGrade,
+  findBestAverageGrade
+};
